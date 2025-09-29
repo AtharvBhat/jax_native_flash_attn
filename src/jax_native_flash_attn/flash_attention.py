@@ -75,8 +75,8 @@ def flash_attention(
     """Compute attention using a pure-JAX FlashAttention kernel."""
     if dropout_rate < 0.0 or dropout_rate > 1.0:
         raise ValueError(f"dropout_rate must be in [0, 1], got {dropout_rate}")
-    if rng is None:
-        raise ValueError("An rng key must be provided to flash_attention")
+        if rng is None:
+            raise ValueError("An rng key must be provided to flash_attention")
     if local_window_size is not None and isinstance(local_window_size, int):
         local_window_size = (local_window_size, local_window_size)
     if local_window_size is not None and (
