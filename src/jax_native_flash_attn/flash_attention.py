@@ -65,7 +65,7 @@ def flash_attention(
     local_window_size: Optional[int | Tuple[int, int]] = None,
     implementation: Literal["xla", "cudnn", None] = None,
     dropout_rate: float = 0.0,
-    rng: jax.random.PRNGKey,
+    rng: Optional[jax.random.PRNGKey],
     blocksize_q: Optional[int] = None,
     blocksize_k: Optional[int] = None,
     dtype: Optional[jnp.dtype] = None,
