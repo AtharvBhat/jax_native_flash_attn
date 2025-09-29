@@ -2,7 +2,7 @@
 
 `jax_native_flash_attn` provides a drop-in replacement for
 `jax.nn.dot_product_attention` implemented entirely in JAX. It repackages the
-pure JAX FlashAttention kernel from Erfan Zar's
+pure JAX FlashAttention kernel from Erfan Zare's
 [`jax-flash-attn2`](https://github.com/erfanzar/jax-flash-attn2) repository into
 a lighter-weight, more portable library that keeps the memory footprint of
 FlashAttention while supporting the same masking, biasing, and dropout options
@@ -63,7 +63,7 @@ and reports per-call latency for both implementations.
 ## Credits
 
 This project is a portability-focused repackaging of the pure JAX kernel
-originally implemented by Erfan Zar in
+originally implemented by Erfan Zare in
 [`erfanzar/jax-flash-attn2`](https://github.com/erfanzar/jax-flash-attn2).
 All credit for the FlashAttention implementation belongs to Erfan; this library
-simply trims ancillary dependencies and redistributes the code for broader use.
+simply trims dependencies and redistributes the code for broader use.
