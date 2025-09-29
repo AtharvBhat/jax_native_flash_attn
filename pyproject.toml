@@ -1,0 +1,21 @@
+[project]
+name = "jax-native-flash-attn"
+version = "0.1.0"
+description = "Portable repackaging of Erfan Zar's pure JAX FlashAttention kernel"
+readme = "README.md"
+authors = [
+    { name = "Atharv Bhat", email = "bhat.atharv@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "jax>=0.7.2",
+]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.2",
+]
