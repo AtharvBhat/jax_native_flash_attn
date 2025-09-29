@@ -4,9 +4,7 @@
 `jax.nn.dot_product_attention` implemented entirely in JAX. It repackages the
 pure JAX FlashAttention kernel from Erfan Zare's
 [`jax-flash-attn2`](https://github.com/erfanzar/jax-flash-attn2) repository into
-a lighter-weight, more portable library that keeps the memory footprint of
-FlashAttention while supporting the same masking, biasing, and dropout options
-exposed by the upstream API.
+a lighter-weight, more portable library.
 
 ## Installation
 
@@ -33,11 +31,6 @@ value = jnp.ones((2, 128, 8, 64))
 output = flash_attention(query, key, value, is_causal=True)
 ```
 
-All arguments supported by `jax.nn.dot_product_attention`—including bias,
-Boolean masks, sequence lengths, causal masking, and local window masking—are
-available. The kernel can be jitted and differentiated in the same way as the
-reference implementation.
-
 ## Testing
 
 The test-suite exercises forward values, gradients, VJPs, dtype coverage, and
@@ -56,9 +49,6 @@ To compare the native FlashAttention kernel to the XLA-based implementation of
 ```sh
 uv run python benchmarks/benchmark_flash_attention.py
 ```
-
-By default this executes a few representative batch/head/sequence configurations
-and reports per-call latency for both implementations.
 
 ## Credits
 
